@@ -34,6 +34,10 @@ it('verify error msg of login with no user',()=>{
     loginPage.shouldDisplayInputFiledsErrorMsgWithNoData();
 })
 it('verify logout',()=>{
+    cy.fixture('testdata.json').then((data)=>{
+        cy.login(data.username,data.pwd);
+        loginPage.hrmLogoShouldBeVisible();
+    })
     cy.logout();
 })
 })
