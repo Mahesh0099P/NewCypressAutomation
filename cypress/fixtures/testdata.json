@@ -1,0 +1,7 @@
+{
+  "username": "Admin",
+  "email": "hello@cypress.io",
+  "pwd": "admin123",
+  "wrongUser":"Admins",
+  "wrongPwd":"admin@123"
+}
