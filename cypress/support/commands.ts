@@ -28,8 +28,9 @@ import * as loginPage from "../pages/loginpage";
  Cypress.Commands.add('logout',()=>{
    // Action
    cy.get(loginPage.elements.dropDown).click();
+   cy.wait(2000);
    cy.xpath(loginPage.elements.logoutBtn).click();
-   cy.wait(1000);
+   cy.wait(3000);
    // Verification
    cy.contains('Login').should('be.visible');
  });

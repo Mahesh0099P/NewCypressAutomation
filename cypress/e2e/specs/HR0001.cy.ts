@@ -38,6 +38,7 @@ it('verify logout',()=>{
         cy.login(data.username,data.pwd);
         loginPage.hrmLogoShouldBeVisible();
     })
+    cy.wait(2000);
     cy.logout();
 })
 })

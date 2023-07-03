@@ -3,7 +3,7 @@ export const elements={
     pwdInput:'[name="password"]',
     loginBtn:'[type="submit"]',
     hrmLogo:'.oxd-brand-banner > img',
-    dropDown:".oxd-userdropdown-tab > .oxd-icon",
+    dropDown:".oxd-userdropdown-tab >.oxd-icon",
     logoutBtn:'//*[text()="Logout"]'
 }
 
