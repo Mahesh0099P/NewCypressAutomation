@@ -1,12 +1,14 @@
-version: '2.1'
-orbs:
-  cypress: cypress-io/cypress@3
 workflows:
   use-my-orb:
     jobs:
       - cypress/run:
-          cypress-command: npx cypress run --browser chrome
-          install-browsers: true
-          start-command: npm run start:dev
+          #cypress-command: npx cypress run --browser chrome --record --key fba56570-8886-4493-89e2-638dcf3495a5
+          cypress-command: 'npx cypress run --parallel --record --key fba56570-8886-4493-89e2-638dcf3495a5'
+          start-command: 'npm run cy:run'
+          parallelism: 1 # use 4 CircleCI machines to finish quickly
+          #install-browsers: true
+         # start-command: 'npm run cy:run'
+         # start-command: npm run start:dev
+
 
 
