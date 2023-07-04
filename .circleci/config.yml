@@ -13,8 +13,6 @@ workflows:
           start-command: 'npm run cy-record:run'
          # start-command: npm run start:dev
 
-
-version: 2
 jobs:
 build:
   working_directory: /tmp
