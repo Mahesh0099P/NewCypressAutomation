@@ -13,19 +13,21 @@ workflows:
           start-command: 'npm run cy-record:run'
          # start-command: npm run start:dev
 
+
+version: 2
 jobs:
 build:
   working_directory: /tmp
   steps:
     - run:
-        name: Creating  Artifacts
+        name: Creating Dummy Artifacts
         command: |
           echo "my artifact file" > /tmp/art-1;
           mkdir /tmp/artifacts;
           echo "my artifact files in a dir" > /tmp/artifacts/art-2;
 
     - store_artifacts:
-        path: /tmp/art-1
+        path: cypress\videos
         destination: artifact-file
 
     - store_artifacts:
