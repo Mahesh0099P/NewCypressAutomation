@@ -6,27 +6,24 @@ workflows:
     jobs:
       - cypress/run:
           cypress-command: npx cypress run --browser chrome 
-          #cypress-command: 'npx cypress run --parallel --record --key fba56570-8886-4493-89e2-638dcf3495a5'
-         # start-command: 'npm run cy:run'
-          #parallelism: 1 # use 4 CircleCI machines to finish quickly
           install-browsers: true
           start-command: 'npm run cy-record:run'
-         # start-command: npm run start:dev
-
-jobs:
+         - store_test_results:
+         path: cypress\video
 build:
-  working_directory: /tmp
+  working_directory: /D:\cy-test\NewCypressAutomation\cypress
   steps:
     - run:
-        name: Creating Dummy Artifacts
+        name: Creating  Artifacts
         command: |
           echo "my artifact file" > /tmp/art-1;
           mkdir /tmp/artifacts;
           echo "my artifact files in a dir" > /tmp/artifacts/art-2;
 
     - store_artifacts:
-        path: cypress\videos
+        path: /tmp/art-1
         destination: artifact-file
 
     - store_artifacts:
         path: /tmp/artifacts
+
