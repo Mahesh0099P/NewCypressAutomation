@@ -8,18 +8,19 @@ workflows:
           cypress-command: npx cypress run --browser chrome 
           install-browsers: true
           start-command: 'npm run cy-record:run'
-         - store_test_results:
-         path: cypress\video
+        # - store_test_results:
+        # path: cypress\video
 build:
   working_directory: /D:\cy-test\NewCypressAutomation\cypress
   steps:
     - run:
         name: Creating  Artifacts
         command: |
-          echo "my artifact file" > /tmp/art-1;
+          echo "cypress\videos" > /tmp/art-1;
           mkdir /tmp/artifacts;
-          echo "my artifact files in a dir" > /tmp/artifacts/art-2;
-
+          echo "cypress\videos\HR0001.cy.ts.mp4" > /tmp/artifacts/art-2;
+    - store_test_results:
+         path: cypress\video
     - store_artifacts:
         path: /tmp/art-1
         destination: artifact-file
